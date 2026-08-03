@@ -188,23 +188,25 @@ type();
 </div>
 
 </div>
-
+<a href="https://wa.me/919520225209" class="hire-btn">
+  Hire Me
+</a>
 </header>
 <script>
-window.addEventListener("load", () => {
-  document.body.style.opacity = "1";
-});
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card => {
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-10px)";
+  window.addEventListener("load", () => {
+    document.body.style.opacity = "1";
   });
-       card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)";
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-10px)";
     });
-});
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+    });
+  });
 
 </script>
 </body>
