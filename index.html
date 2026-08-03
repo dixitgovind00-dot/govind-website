@@ -3,133 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Govind Kumar</title>
+<title>Govind Kumar Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
-scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0d0d0d;
+background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
 color:white;
+overflow-x:hidden;
 }
 
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#111;
-display:flex;
-justify-content:space-between;
-padding:18px 10%;
-z-index:999;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#FFD700;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-}
-
-.hero{
+header{
 height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
-gap:70px;
-padding:100px 10%;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-.hero img{
-width:320px;
-border-radius:25px;
-box-shadow:0 0 30px gold;
+.profile{
+animation:fadeUp 1.5s ease;
 }
 
-.hero-text h1{
-font-size:55px;
-color:#FFD700;
+.profile img{
+width:180px;
+height:180px;
+border-radius:50%;
+border:5px solid #00f7ff;
+box-shadow:0 0 30px #00f7ff;
+object-fit:cover;
+transition:.4s;
 }
 
-.hero-text p{
-margin:15px 0;
+.profile img:hover{
+transform:scale(1.08);
+}
+
+h1{
+font-size:42px;
+margin-top:20px;
+}
+
+#typing{
 font-size:22px;
+color:#00f7ff;
+margin-top:10px;
+min-height:30px;
+}
+
+.buttons{
+margin-top:30px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 35px;
-background:#FFD700;
-color:black;
-text-decoration:none;
+padding:14px 30px;
+margin:10px;
 border-radius:40px;
+text-decoration:none;
 font-weight:bold;
-margin-right:15px;
+background:#00f7ff;
+color:#000;
 transition:.3s;
 }
 
 .btn:hover{
-transform:scale(1.08);
+transform:translateY(-5px);
+box-shadow:0 0 20px #00f7ff;
 }
 
-footer{
-text-align:center;
-padding:30px;
-background:#111;
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">Govind Kumar</div>
+<header>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+<div class="profile">
 
-<section class="hero">
-
-<img src="profile.jpg" alt="Govind Kumar">
-
-<div class="hero-text">
+<img src="profile.jpg" alt="Profile">
 
 <h1>Govind Kumar</h1>
+<section style="padding:80px 20px;text-align:center;">
+<h2 style="font-size:36px;color:#00f7ff;">About Me</h2>
 
-<p>Content Creator | Vlogger</p>
+<p style="max-width:700px;margin:20px auto;font-size:18px;line-height:1.8;color:#ddd;">
+Hello! I'm <b>Govind Kumar</b>.
+I love Web Development, Technology and Content Creation.
+Welcome to my personal portfolio website.
+</p>
 
-<a class="btn" href="https://www.instagram.com/madhav_vloger_up79/" target="_blank">Instagram</a>
+<h2 style="margin-top:60px;color:#00f7ff;">My Skills</h2>
 
-<a class="btn" href="https://www.youtube.com/@madhavVlogerUP79" target="_blank">YouTube</a>
+<div style="margin-top:30px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
+
+<span class="btn">HTML</span>
+<span class="btn">CSS</span>
+<span class="btn">JavaScript</span>
+<span class="btn">GitHub</span>
 
 </div>
 
 </section>
 
-<footer>
-© 2026 Govind Kumar | All Rights Reserved
+<footer style="padding:30px;text-align:center;color:#aaa;">
+© 2026 Govind Kumar | Made with ❤️
 </footer>
 
+<script>
+
+const words=[
+"Web Developer",
+"Content Creator",
+"Tech Enthusiast",
+"Frontend Designer"
+];
+
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
+
+function type(){
+
+current=words[i];
+
+if(isDeleting){
+j--;
+}else{
+j++;
+}
+
+document.getElementById("typing").textContent=current.substring(0,j);
+
+if(!isDeleting && j==current.length){
+isDeleting=true;
+setTimeout(type,1200);
+return;
+}
+
+if(isDeleting && j==0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+
+setTimeout(type,isDeleting?60:120);
+
+}
+
+type();
+
+</script>
+
 </body>
-  </html>
+</html>
+  
+<p id="typing"></p>
+
+<div class="buttons">
+
+<a class="btn" href="https://github.com/dixitgovind00-dot">GitHub</a>
+
+<a class="btn" href="https://instagram.com/auraiya__up79">Instagram</a>
+
+</div>
+
+</div>
+
+</header>
