@@ -3,99 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Govind Kumar Portfolio</title>
-<meta name="description" content="Official website of Govind Kumar. Fitness Journey, Motivation, Portfolio and Contact.">
 
-<meta name="keywords" content="Govind Kumar, Govind Dixit, Portfolio, Website, Fitness, Motivation">
+<title>GojoWithGovind Academy</title>
 
-<meta name="author" content="Govind Kumar">
-
-<meta name="robots" content="index, follow">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<meta name="description" content="GojoWithGovind Academy - Learn English, Coding, Computer Skills, and Competitive Exam Preparation.">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
-color:white;
-overflow-x:hidden;
+background:#f5f5f5;
 }
 
 header{
-height:100vh;
+background:#0d47a1;
+color:white;
+padding:20px;
 display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+background:linear-gradient(135deg,#1565c0,#42a5f5);
+color:white;
 padding:20px;
 }
 
-.profile{
-animation:fadeUp 1.5s ease;
-}
-
-.profile img{
-width:180px;
-height:180px;
-border-radius:50%;
-border:5px solid #00f7ff;
-box-shadow:0 0 30px #00f7ff;
-object-fit:cover;
-transition:.4s;
-}
-
-.profile img:hover{
-transform:scale(1.08);
-}
-
-h1{
+.hero h1{
 font-size:42px;
-margin-top:20px;
+margin-bottom:15px;
 }
 
-#typing{
-font-size:22px;
-color:#00f7ff;
-margin-top:10px;
-min-height:30px;
-}
-
-.buttons{
-margin-top:30px;
+.hero p{
+font-size:20px;
+max-width:700px;
+margin-bottom:30px;
 }
 
 .btn{
-display:inline-block;
-padding:14px 30px;
-margin:10px;
-border-radius:40px;
+background:white;
+color:#1565c0;
+padding:15px 30px;
 text-decoration:none;
+font-size:18px;
+border-radius:30px;
 font-weight:bold;
-background:#00f7ff;
-color:#000;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 20px #00f7ff;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(60px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
 }
 </style>
 </head>
@@ -103,118 +78,26 @@ transform:translateY(0);
 <body>
 
 <header>
+<div class="logo">GojoWithGovind Academy</div>
 
-<div class="profile">
+<nav>
+<a href="#">Home</a>
+<a href="#">Courses</a>
+<a href="#">Notes</a>
+<a href="#">Quiz</a>
+<a href="#">Contact</a>
+</nav>
+</header>
 
-<img src="profile.jpg" alt="Profile">
+<section class="hero">
 
-<h1>Govind Kumar</h1>
-<section style="padding:80px 20px;text-align:center;">
-<h2 style="font-size:36px;color:#00f7ff;">About Me</h2>
+<h1>Welcome to GojoWithGovind Academy</h1>
 
-<p style="max-width:700px;margin:20px auto;font-size:18px;line-height:1.8;color:#ddd;">
-Hello! I'm <b>Govind Kumar</b>.
-I love Web Development, Technology and Content Creation.
-Welcome to my personal portfolio website.
-</p>
+<p>Learn English, Coding, Computer Skills and Competitive Exams with easy lessons.</p>
 
-<h2 style="margin-top:60px;color:#00f7ff;">My Skills</h2>
-
-<div style="margin-top:30px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
-
-<span class="btn">HTML</span>
-<span class="btn">CSS</span>
-<span class="btn">JavaScript</span>
-<span class="btn">GitHub</span>
-
-</div>
+<a class="btn" href="#">Start Learning</a>
 
 </section>
 
-<footer style="padding:30px;text-align:center;color:#aaa;">
-© 2026 Govind Kumar | Made with ❤️
-</footer>
-
-<script>
-
-const words=[
-"Web Developer",
-"Content Creator",
-"Tech Enthusiast",
-"Frontend Designer"
-];
-
-let i=0;
-let j=0;
-let current="";
-let isDeleting=false;
-
-function type(){
-
-current=words[i];
-
-if(isDeleting){
-j--;
-}else{
-j++;
-}
-
-document.getElementById("typing").textContent=current.substring(0,j);
-
-if(!isDeleting && j==current.length){
-isDeleting=true;
-setTimeout(type,1200);
-return;
-}
-
-if(isDeleting && j==0){
-isDeleting=false;
-i=(i+1)%words.length;
-}
-
-setTimeout(type,isDeleting?60:120);
-
-}
-
-type();
-
-</script>
-
 </body>
 </html>
-  
-<p id="typing"></p>
-
-<div class="buttons">
-
-<a class="btn" href="https://github.com/dixitgovind00-dot">GitHub</a>
-
-<a class="btn" href="https://instagram.com/auraiya__up79">Instagram</a>
-
-</div>
-
-</div>
-<a href="https://wa.me/919520225209" class="hire-btn">
-  Hire Me
-</a>
-</header>
-<script>
-  window.addEventListener("load", () => {
-    document.body.style.opacity = "1";
-  });
-
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      card.style.transform = "translateY(-10px)";
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "translateY(0)";
-    });
-  });
-
-</script>
-</body>
-</html>
-  
