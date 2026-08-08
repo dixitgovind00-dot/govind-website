@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Current Affairs - 8 August 2026</title>
+
+<style>
+    * {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* Previous / Next Buttons */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 750px;
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+.navigation button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navigation button:active {
+    transform: scale(0.97);
+  }
+
+    .header {
+        background: linear-gradient(135deg, #1d4ed8, #2563eb);
+        color: white;
+        padding: 25px 15px;
+        text-align: center;
+    }
+
+    .header h1 {
+        margin: 0 0 8px;
+        font-size: 25px;
+    }
+
+    .header p {
+        margin: 5px 0;
+        font-size: 15px;
+    }
+
+    .score {
+        background: white;
+        color: #1d4ed8;
+        display: inline-block;
+        padding: 8px 15px;
+        border-radius: 20px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .container {
+        max-width: 750px;
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .question-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .question-number {
+        color: #2563eb;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .question {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.5;
+    }
+
+    .hindi {
+        margin-top: 8px;
+        color: #444;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .options {
+        margin-top: 18px;
+    }
+
+    .option {
+        width: 100%;
+        border: 2px solid #ddd;
+        background: white;
+        padding: 13px;
+        margin: 10px 0;
+        border-radius: 10px;
+        text-align: left;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .option:hover {
+        border-color: #2563eb;
+        background: #eff6ff;
+    }
+
+    .option.correct {
+        background: #dcfce7;
+        border-color: #16a34a;
+        color: #166534;
+        font-weight: bold;
+    }
+
+    .option.wrong {
+        background: #fee2e2;
+        border-color: #dc2626;
+        color: #991b1b;
+        font-weight: bold;
+    }
+
+    .option.disabled {
+        cursor: not-allowed;
+    }
+
+    .result {
+        display: none;
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    .result.correct-result {
+        display: block;
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    .result.wrong-result {
+        display: block;
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .answer {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        border-radius: 5px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📚 Current Affairs</h1>
+    <p>8 August 2026</p>
+    <p>करेंट अफेयर्स • Current Affairs</p>
+
+    <div class="score">
+        Score: <span id="score">0</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- QUESTION 1 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            Question 1
+        </div>
+
+        <div class="question">
+            In which location did India successfully test-fire the Agni-4 Medium-Range Ballistic Missile in August 2026?
+        </div>
+
+        <div class="hindi">
+            भारत ने अगस्त 2026 में अग्नि-4 मध्यम दूरी की बैलिस्टिक मिसाइल का सफल परीक्षण किस स्थान से किया?
+        </div>
+
+        <div class="options">
+
+            <button class="option"
+                onclick="checkAnswer(this, false, 1)">
+                A. Pokhran, Rajasthan
+            </button>
+
+            <button class="option"
+                onclick="checkAnswer(this, true, 1)">
+                B. Integrated Test Range, Chandipur, Odisha
+            </button>
+
+            <button class="option"
+                onclick="checkAnswer(this, false, 1)">
+                C. Sriharikota, Andhra Pradesh
+            </button>
+
+            <button class="option"
+                onclick="checkAnswer(this, false, 1)">
+                D. Balasore, Odisha
+            </button>
+
+        </div>
+
+        <div id="result1" class="result"></div>
+
+        <div id="answer1" class="answer">
+            ✅ Correct Answer:
+            Integrated Test Range, Chandipur, Odisha
+            <br>
+            सही उत्तर:
+            एकीकृत परीक्षण रेंज, चांदीपुर, ओडिशा
+        </div>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="question-card">
+
+        <div class="question-number">
+            Question 2
+        </div>
+
+        <div class="question">
+            What is the total financial outlay approved by the Union Cabinet for the National Circular Bioenergy Scheme, 'GOBARdhan'?
+        </div>
+
+        <div class="hindi">
+            केंद्रीय मंत्रिमंडल द्वारा राष्ट्रीय चक्रीय जैव-ऊर्जा योजना,
+            'गोबरधन' के लिए कुल कितना वित्तीय परिव्यय स्वीकृत किया गया है?
+        </div>
+
+        <div class="options">
+
+            <button class="option"
+                onclick="checkAnswer(this, false, 2)">
+                A. ₹15,000 crore
+            </button>
+
+            <button class="option"
+                onclick="checkAnswer(this, false, 2)">
+                B. ₹20,000 crore
+            </button>
+
+            <button class="option"
+                onclick="checkAnswer(this, true, 2)">
+                C. ₹23,731 crore
+            </button>
+
+            <button class="option"
+                onclick="checkAnswer(this, false, 2)">
+                D. ₹25,000 crore
+            </button>
+
+        </div>
+
+        <div id="result2" class="result"></div>
+
+        <div id="answer2" class="answer">
+            ✅ Correct Answer:
+            ₹23,731 crore
+            <br>
+            सही उत्तर:
+            ₹23,731 करोड़
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let score = 0;
+
+function checkAnswer(button, isCorrect, questionNumber) {
+
+    // Question ke saare options
+    const card = button.closest(".question-card");
+    const options = card.querySelectorAll(".option");
+
+    // Agar pehle hi answer diya ja chuka hai
+    if (card.dataset.answered === "true") {
+        return;
+    }
+
+    // Lock question
+    card.dataset.answered = "true";
+
+    // Sabhi buttons ko disable karo
+    options.forEach(option => {
+        option.classList.add("disabled");
+        option.disabled = true;
+    });
+
+    const result = document.getElementById("result" + questionNumber);
+    const answer = document.getElementById("answer" + questionNumber);
+
+    if (isCorrect) {
+
+        // Correct option green
+        button.classList.add("correct");
+
+        result.innerHTML = "🎉 Correct Answer! बिल्कुल सही!";
+        result.classList.add("correct-result");
+
+        score++;
+
+        document.getElementById("score").innerText = score;
+
+    } else {
+
+        // Wrong option red
+        button.classList.add("wrong");
+
+        result.innerHTML = "❌ Wrong Answer! गलत उत्तर!";
+
+        result.classList.add("wrong-result");
+
+        // Correct option ko green karo
+        options.forEach(option => {
+
+            if (
+                option.getAttribute("onclick") &&
+                option.getAttribute("onclick").includes("true")
+            ) {
+                option.classList.add("correct");
+            }
+
+        });
+
+    }
+
+    // Answer ab show hoga
+    answer.style.display = "block";
+}
+function previousDay() {
+    window.location.href = "current-affairs.html";
+}
+
+function nextDay() {
+    window.location.href = "current-affairs-day2.html";
+}
+</script>
+
+<!-- Previous / Next Buttons -->
+
+<div class="navigation">
+
+    <button onclick="previousDay()">
+        ⬅️ Previous
+    </button>
+
+    <button onclick="nextDay()">
+        Next ➡️
+    </button>
+
+</div>
+
+</body>
+</html>
