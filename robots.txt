@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dixitgovind00-dot.github.io/govind-website/sitemap.xml
