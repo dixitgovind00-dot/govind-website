@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GojoWithGovind Academy</title>
+<title>GojoWithGovind Academy | Govind Dixit</title>
 
-<meta name="description" content="GojoWithGovind Academy - Learn English, Coding, Computer Skills, Competitive Exams and read books.">
+<meta name="description" content="GojoWithGovind Academy by Govind Dixit. Learn English, Coding, Computer Skills, Web Development and Competitive Exam subjects with easy lessons, notes and practice material.">
 
-<meta name="google-site-verification" content="-BGV9tsC5KqOZcinUwDPPaKyX7Lfh3WUdtB6nKnNaug" />
+<meta name="author" content="Govind Dixit">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://dixitgovind00-dot.github.io/govind-website/">
+
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification" content="-BGV9tsC5KqOZcinUwDPPaKyX7Lfh3WUdtB6nKnNaug">
+
+<!-- Social Media / Google Preview -->
+<meta property="og:title" content="GojoWithGovind Academy | Govind Dixit">
+
+<meta property="og:description" content="Learn English, Coding, Computer Skills, Web Development and Competitive Exams with GojoWithGovind Academy.">
+
+<meta property="og:url" content="https://dixitgovind00-dot.github.io/govind-website/">
+
+<meta property="og:type" content="website">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -20,6 +39,7 @@ font-family:Arial,sans-serif;
 
 body{
 background:#f5f5f5;
+color:#222;
 }
 
 header{
@@ -43,7 +63,7 @@ margin-left:20px;
 }
 
 .hero{
-height:90vh;
+min-height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -63,6 +83,7 @@ margin-bottom:15px;
 font-size:20px;
 max-width:700px;
 margin-bottom:30px;
+line-height:1.6;
 }
 
 .btn{
@@ -73,6 +94,29 @@ text-decoration:none;
 font-size:18px;
 border-radius:30px;
 font-weight:bold;
+}
+
+.btn:hover{
+transform:scale(1.03);
+}
+
+/* COURSES */
+
+.card{
+width:250px;
+padding:20px;
+background:#f5f5f5;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#1565c0;
+}
+
+.card p{
+line-height:1.5;
 }
 
 /* BOOK SECTION */
@@ -139,14 +183,6 @@ background:#0d47a1;
 
 /* GENERAL CARDS */
 
-.card{
-width:250px;
-padding:20px;
-background:#f5f5f5;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
 .feature-card{
 width:250px;
 background:white;
@@ -165,6 +201,14 @@ border-radius:10px;
 margin:10px;
 text-align:center;
 box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.small-card h3{
+margin-bottom:10px;
+}
+
+.small-card p{
+line-height:1.5;
 }
 
 .open-btn{
@@ -186,6 +230,10 @@ flex-direction:column;
 gap:15px;
 }
 
+nav{
+text-align:center;
+}
+
 nav a{
 margin:0 5px;
 font-size:14px;
@@ -204,7 +252,9 @@ font-size:30px;
 }
 
 }
+
 </style>
+
 </head>
 
 <body>
@@ -218,11 +268,17 @@ GojoWithGovind Academy
 </div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Courses</a>
-<a href="#">Notes</a>
-<a href="#">Quiz</a>
-<a href="#">Contact</a>
+
+<a href="#home">Home</a>
+
+<a href="#courses">Courses</a>
+
+<a href="#book">Book</a>
+
+<a href="#current-affairs">Quiz</a>
+
+<a href="#contact">Contact</a>
+
 </nav>
 
 </header>
@@ -230,12 +286,12 @@ GojoWithGovind Academy
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
 
 <h1>Welcome to GojoWithGovind Academy</h1>
 
 <p>
-Learn English, Coding, Computer Skills and Competitive Exams with easy lessons.
+Learn English, Coding, Computer Skills and Competitive Exams with easy lessons, notes and practice material.
 </p>
 
 <a class="btn" href="#courses">
@@ -249,7 +305,7 @@ Start Learning
 
 <section id="courses" style="padding:60px 20px;background:#ffffff;text-align:center;">
 
-<h2 style="font-size:36px;color:#1565c0;">
+<h2 style="font-size:36px;color:#1565c0;margin-bottom:15px;">
 Our Courses
 </h2>
 
@@ -266,17 +322,17 @@ Choose a course and start learning today.
 
 <div class="card">
 <h3>Computer Basics</h3>
-<p>MS Word, Excel, Internet and more.</p>
+<p>Learn MS Word, Excel, Internet and computer skills.</p>
 </div>
 
 <div class="card">
 <h3>Web Development</h3>
-<p>HTML, CSS, JavaScript and Projects.</p>
+<p>Learn HTML, CSS, JavaScript and build projects.</p>
 </div>
 
 <div class="card">
 <h3>Competitive Exams</h3>
-<p>SBI, SSC, Railway, Police and more.</p>
+<p>Study material for SBI, SSC, Railway, Police and more.</p>
 </div>
 
 </div>
@@ -286,7 +342,7 @@ Choose a course and start learning today.
 
 <!-- BOOK SECTION -->
 
-<section class="book-section">
+<section class="book-section" id="book">
 
 <h2>📚 मेरी पुस्तक</h2>
 
@@ -369,7 +425,7 @@ Open Day 1
 
 <!-- CURRENT AFFAIRS -->
 
-<div class="small-card">
+<div class="small-card" id="current-affairs">
 
 <h3>📰 Current Affairs</h3>
 
@@ -388,9 +444,9 @@ Open Current Affairs
 
 <!-- CONTACT -->
 
-<section style="padding:60px 20px;background:#f5f5f5;text-align:center;">
+<section id="contact" style="padding:60px 20px;background:#f5f5f5;text-align:center;">
 
-<h2 style="font-size:36px;color:#1565c0;">
+<h2 style="font-size:36px;color:#1565c0;margin-bottom:25px;">
 Contact Us
 </h2>
 
@@ -423,5 +479,20 @@ style="display:inline-block;margin:10px;padding:12px 25px;background:#28a745;col
 </section>
 
 
+<!-- FOOTER -->
+
+<footer style="background:#0d47a1;color:white;text-align:center;padding:25px;">
+
+<p>
+© 2026 GojoWithGovind Academy
+</p>
+
+<p style="margin-top:8px;">
+Created by Govind Dixit
+</p>
+
+</footer>
+
+
 </body>
-</html>
+  </html>
