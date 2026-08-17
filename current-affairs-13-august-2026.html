@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Current Affairs 13 August 2026 | CareerWill360 Roundup</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f1f5f9;
+    color:#111827;
+}
+
+.header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.header h1{
+    margin:0 0 8px;
+    font-size:25px;
+}
+
+.header p{
+    margin:5px;
+}
+
+.container{
+    max-width:750px;
+    margin:25px auto;
+    padding:15px;
+}
+
+.quiz-card{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.progress{
+    font-weight:bold;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.question{
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.question span{
+    display:block;
+    font-size:17px;
+    color:#374151;
+    margin-top:8px;
+}
+
+.option{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:2px solid #e5e7eb;
+    border-radius:12px;
+    background:white;
+    text-align:left;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    background:#eff6ff;
+    border-color:#2563eb;
+}
+
+.option.correct{
+    background:#dcfce7;
+    border-color:#16a34a;
+    color:#166534;
+}
+
+.option.wrong{
+    background:#fee2e2;
+    border-color:#dc2626;
+    color:#991b1b;
+}
+
+.explanation{
+    margin-top:15px;
+    padding:12px;
+    border-radius:10px;
+    background:#f3f4f6;
+    display:none;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button.nav{
+    flex:1;
+    padding:13px;
+    border:0;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button.nav:disabled{
+    background:#9ca3af;
+    cursor:not-allowed;
+}
+
+#result{
+    display:none;
+    text-align:center;
+    background:white;
+    padding:30px 20px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.score{
+    font-size:35px;
+    font-weight:bold;
+    color:#2563eb;
+    margin:15px;
+}
+
+.restart{
+    background:#16a34a;
+    color:white;
+    border:0;
+    padding:13px 25px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#6b7280;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>📚 Current Affairs Quiz</h1>
+    <p>13 August 2026</p>
+    <p>CAREERWILL360° ROUNDUP</p>
+</div>
+
+<div class="container">
+
+<div id="quiz" class="quiz-card">
+
+    <div class="progress" id="progress"></div>
+
+    <div class="question" id="question"></div>
+
+    <div id="options"></div>
+
+    <div class="explanation" id="explanation"></div>
+
+    <div class="buttons">
+        <button class="nav" id="prevBtn" onclick="previousQuestion()">
+            ← Previous
+        </button>
+
+        <button class="nav" id="nextBtn" onclick="nextQuestion()">
+            Next →
+        </button>
+    </div>
+
+</div>
+
+<div id="result">
+
+    <h2>🎉 Quiz Complete!</h2>
+
+    <p>आपका स्कोर</p>
+
+    <div class="score" id="score"></div>
+
+    <p id="message"></p>
+
+    <button class="restart" onclick="restartQuiz()">
+        🔄 फिर से शुरू करें
+    </button>
+
+</div>
+
+</div>
+
+<div class="footer">
+    © 2026 CareerWill360° Roundup | Educational Quiz
+</div>
+
+
+<script>
+
+const questions = [
+
+{
+q:"Who was recently appointed as the new Chief Secretary of the Andaman and Nicobar Islands?",
+h:"हाल ही में अंडमान और निकोबार द्वीप समूह के नए मुख्य सचिव के रूप में किसे नियुक्त किया गया है?",
+options:[
+"Gyanesh Bharti / ज्ञानेश भारती",
+"Rajiv Kumar / राजीव कुमार",
+"Vivek Joshi / विवेक जोशी",
+"Anil Kumar / अनिल कुमार"
+],
+answer:0
+},
+
+{
+q:"Which Next Generation Offshore Patrol Vessel (NGOPV) was launched by GRSE for the Indian Navy?",
+h:"GRSE द्वारा भारतीय नौसेना के लिए कौन सा NGOPV लॉन्च किया गया?",
+options:[
+"Shruti / श्रुति",
+"Varuna / वरुणा",
+"Shakti / शक्ति",
+"Tarini / तारिणी"
+],
+answer:0
+},
+
+{
+q:"Which global space agency invited ISRO to join its ambitious 'Moon Base' program?",
+h:"किस वैश्विक अंतरिक्ष एजेंसी ने ISRO को 'Moon Base' कार्यक्रम में शामिल होने के लिए आमंत्रित किया?",
+options:[
+"NASA / नासा",
+"ESA / ईएसए",
+"JAXA / जाक्सा",
+"Roscosmos / रोस्कोस्मोस"
+],
+answer:0
+},
+
+{
+q:"Which Indian fencer won gold in the senior women's epee event at the Under-23 Commonwealth Fencing Championship 2026?",
+h:"Under-23 Commonwealth Fencing Championship 2026 में वरिष्ठ महिला Epee स्पर्धा में स्वर्ण किसने जीता?",
+options:[
+"Tanishka Khatri / तनिष्का खत्री",
+"Bhavani Devi / भवानी देवी",
+"Anjali Sharma / अंजलि शर्मा",
+"Neha Singh / नेहा सिंह"
+],
+answer:0
+},
+
+{
+q:"In which state is the Aralam Butterfly Sanctuary located?",
+h:"अरलम तितली अभयारण्य किस राज्य में स्थित है?",
+options:[
+"Kerala / केरल",
+"Assam / असम",
+"Uttarakhand / उत्तराखंड",
+"Sikkim / सिक्किम"
+],
+answer:0
+},
+
+{
+q:"In which city was the 9th India-U.S. Civil Space Joint Working Group meeting held?",
+h:"9वीं India-U.S. Civil Space Joint Working Group बैठक किस शहर में हुई?",
+options:[
+"Bengaluru / बेंगलुरु",
+"New Delhi / नई दिल्ली",
+"Hyderabad / हैदराबाद",
+"Mumbai / मुंबई"
+],
+answer:0
+},
+
+{
+q:"For which denominations has the Government approved polymer banknotes for field trials?",
+h:"पॉलिमर बैंक नोटों के फील्ड ट्रायल के लिए किन मूल्यवर्गों को मंजूरी दी गई?",
+options:[
+"₹10 and ₹20 / ₹10 और ₹20",
+"₹20 and ₹50 / ₹20 और ₹50",
+"₹50 and ₹100 / ₹50 और ₹100",
+"₹100 and ₹200 / ₹100 और ₹200"
+],
+answer:0
+},
+
+{
+q:"Which three countries will co-host the 2027 ICC Men's ODI World Cup?",
+h:"2027 ICC Men's ODI World Cup की संयुक्त मेजबानी कौन से तीन देश करेंगे?",
+options:[
+"South Africa, Zimbabwe and Namibia",
+"India, Sri Lanka and Bangladesh",
+"Australia, New Zealand and England",
+"South Africa, Kenya and Namibia"
+],
+answer:0
+},
+
+{
+q:"Where is India's first WSL Pro Junior surfing competition being organized?",
+h:"भारत की पहली WSL Pro Junior surfing competition कहाँ आयोजित की जा रही है?",
+options:[
+"Mahabalipuram, Tamil Nadu / महाबलीपुरम, तमिलनाडु",
+"Goa / गोवा",
+"Kochi / कोच्चि",
+"Puri / पुरी"
+],
+answer:0
+},
+
+{
+q:"Which app was launched to connect various libraries across the Gandhinagar Lok Sabha constituency?",
+h:"गांधीनगर लोकसभा क्षेत्र की विभिन्न लाइब्रेरियों को जोड़ने के लिए कौन सा ऐप लॉन्च किया गया?",
+options:[
+"Gramin Gyan Setu App / ग्रामीण ज्ञान सेतु ऐप",
+"Digital Library App / डिजिटल लाइब्रेरी ऐप",
+"Gyan Bharat App / ज्ञान भारत ऐप",
+"Library Connect App / लाइब्रेरी कनेक्ट ऐप"
+],
+answer:0
+},
+
+{
+q:"Where was the 4th session of the India-Namibia Joint Trade Committee held?",
+h:"भारत-नामीबिया संयुक्त व्यापार समिति के चौथे सत्र का आयोजन कहाँ हुआ?",
+options:[
+"New Delhi / नई दिल्ली",
+"Windhoek / विंडहोक",
+"Mumbai / मुंबई",
+"Chennai / चेन्नई"
+],
+answer:0
+},
+
+{
+q:"In which country are the Hallaniyat Islands located?",
+h:"हलानियात द्वीप समूह किस देश में स्थित हैं?",
+options:[
+"Oman / ओमान",
+"UAE / यूएई",
+"Saudi Arabia / सऊदी अरब",
+"Qatar / कतर"
+],
+answer:0
+},
+
+{
+q:"In which state is Binsar Wildlife Sanctuary located?",
+h:"बिनसर वन्यजीव अभयारण्य किस राज्य में स्थित है?",
+options:[
+"Uttarakhand / उत्तराखंड",
+"Himachal Pradesh / हिमाचल प्रदेश",
+"Kerala / केरल",
+"Assam / असम"
+],
+answer:0
+},
+
+{
+q:"Which state government launched the Mukhya Mantrir Nijut Moina 2.0 scheme?",
+h:"'मुख्यमंत्री निजुत मोइना 2.0' योजना किस राज्य सरकार ने शुरू की?",
+options:[
+"Assam / असम",
+"West Bengal / पश्चिम बंगाल",
+"Tripura / त्रिपुरा",
+"Meghalaya / मेघालय"
+],
+answer:0
+},
+
+{
+q:"Which West Asian country recently became the first in the Arab world to abolish the death penalty?",
+h:"कौन सा पश्चिम एशियाई देश अरब दुनिया में मृत्युदंड समाप्त करने वाला पहला देश बना?",
+options:[
+"Lebanon / लेबनान",
+"Jordan / जॉर्डन",
+"Israel / इज़राइल",
+"Oman / ओमान"
+],
+answer:0
+},
+
+{
+q:"What is the capital city of Lebanon?",
+h:"लेबनान की राजधानी क्या है?",
+options:[
+"Beirut / बेरूत",
+"Damascus / दमिश्क",
+"Amman / अम्मान",
+"Baghdad / बगदाद"
+],
+answer:0
+},
+
+{
+q:"In which session of the Indian National Congress was 'Vande Mataram' sung for the first time?",
+h:"भारतीय राष्ट्रीय कांग्रेस के किस अधिवेशन में पहली बार 'वंदे मातरम्' गाया गया था?",
+options:[
+"1896 Calcutta Session / 1896 कलकत्ता अधिवेशन",
+"1905 Banaras Session / 1905 बनारस अधिवेशन",
+"1906 Calcutta Session / 1906 कलकत्ता अधिवेशन",
+"1911 Delhi Session / 1911 दिल्ली अधिवेशन"
+],
+answer:0
+},
+
+{
+q:"What is the highest mountain peak in the Andaman and Nicobar Islands?",
+h:"अंडमान और निकोबार द्वीप समूह की सबसे ऊँची पर्वत चोटी कौन सी है?",
+options:[
+"Saddle Peak / सैडल पीक",
+"Mount Harriet / माउंट हैरियट",
+"Mount Thullier / माउंट थुलियर",
+"Narcondam / नारकोंडम"
+],
+answer:0
+},
+
+{
+q:"What is the natural reservoir of Nipah Virus?",
+h:"निपाह वायरस का प्राकृतिक reservoir कौन सा जीव है?",
+options:[
+"Fruit Bats / फ्रूट बैट्स",
+"Monkeys / बंदर",
+"Rodents / कृंतक",
+"Domestic Dogs / घरेलू कुत्ते"
+],
+answer:0
+},
+
+{
+q:"Where is the headquarters of the International Monetary Fund (IMF) located?",
+h:"अंतर्राष्ट्रीय मुद्रा कोष (IMF) का मुख्यालय कहाँ स्थित है?",
+options:[
+"Washington, D.C. / वाशिंगटन डी.सी.",
+"New York / न्यूयॉर्क",
+"London / लंदन",
+"Geneva / जिनेवा"
+],
+answer:0
+}
+
+];
+
+
+let current = 0;
+let score = 0;
+let answered = false;
+let userAnswers = new Array(questions.length).fill(null);
+
+
+function loadQuestion(){
+
+    answered = userAnswers[current] !== null;
+
+    const q = questions[current];
+
+    document.getElementById("progress").innerText =
+        `Question ${current + 1} of ${questions.length}`;
+
+    document.getElementById("question").innerHTML =
+        q.q + "<span>" + q.h + "</span>";
+
+    const optionsBox = document.getElementById("options");
+    optionsBox.innerHTML = "";
+
+    q.options.forEach((option,index)=>{
+
+        const btn = document.createElement("button");
+
+        btn.className = "option";
+        btn.innerText = option;
+
+        btn.onclick = () => selectAnswer(index);
+
+        if(answered){
+
+            btn.disabled = true;
+
+            if(index === q.answer){
+                btn.classList.add("correct");
+            }
+
+            if(index === userAnswers[current] &&
+               index !== q.answer){
+                btn.classList.add("wrong");
+            }
+        }
+
+        optionsBox.appendChild(btn);
+    });
+
+    const explanation =
+        document.getElementById("explanation");
+
+    if(answered){
+
+        explanation.style.display = "block";
+
+        if(userAnswers[current] === q.answer){
+            explanation.innerText = "✅ सही उत्तर!";
+        }else{
+            explanation.innerText =
+                "❌ गलत उत्तर! सही उत्तर: " +
+                q.options[q.answer];
+        }
+
+    }else{
+
+        explanation.style.display = "none";
+    }
+
+    document.getElementById("prevBtn").disabled =
+        current === 0;
+
+    document.getElementById("nextBtn").innerText =
+        current === questions.length - 1
+        ? "Finish ✓"
+        : "Next →";
+}
+
+
+function selectAnswer(index){
+
+    if(answered) return;
+
+    answered = true;
+
+    userAnswers[current] = index;
+
+    if(index === questions[current].answer){
+        score++;
+    }
+
+    loadQuestion();
+}
+
+
+function nextQuestion(){
+
+    if(current < questions.length - 1){
+
+        current++;
+        loadQuestion();
+
+    }else{
+
+        showResult();
+    }
+}
+
+
+function previousQuestion(){
+
+    if(current > 0){
+
+        current--;
+        loadQuestion();
+    }
+}
+
+
+function showResult(){
+
+    document.getElementById("quiz").style.display = "none";
+
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("score").innerText =
+        score + " / " + questions.length;
+
+    let percentage =
+        (score / questions.length) * 100;
+
+    let message = "";
+
+    if(percentage >= 80){
+        message = "🔥 शानदार! आपकी तैयारी बहुत अच्छी है।";
+    }
+    else if(percentage >= 60){
+        message = "👍 बहुत अच्छा! थोड़ी और तैयारी करें।";
+    }
+    else if(percentage >= 40){
+        message = "📚 अच्छा प्रयास! Current Affairs को दोबारा पढ़ें।";
+    }
+    else{
+        message = "💪 मेहनत जारी रखें, अगली बार बेहतर स्कोर आएगा।";
+    }
+
+    document.getElementById("message").innerText =
+        message;
+}
+
+
+function restartQuiz(){
+
+    current = 0;
+    score = 0;
+    answered = false;
+
+    userAnswers =
+        new Array(questions.length).fill(null);
+
+    document.getElementById("quiz").style.display = "block";
+
+    document.getElementById("result").style.display = "none";
+
+    loadQuestion();
+}
+
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
